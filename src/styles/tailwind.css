@@ -13,3 +13,37 @@
 /* Stop purging. */
 
 /* Your own custom utilities */
+@layer base {
+
+    @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("../assets/font/PlusJakartaText-Light.otf");
+        font-style: light;
+        font-weight: 100;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("../assets/font/PlusJakartaText-Regular.otf");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("../assets/font/PlusJakartaDisplay-Medium.otf");
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("../assets/font/PlusJakartaText-Bold.otf");
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+    }
+}
