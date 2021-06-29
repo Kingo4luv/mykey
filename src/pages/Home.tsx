@@ -60,7 +60,7 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <section className="py-0 md:py-32 max-w-[1100px] mx-auto flex flex-col-reverse md:flex-row items-center px-4">
+      <section className="py-0 md:py-32 max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center px-4">
         <div className="w-full lg:w-1/3 mt-20 md:mt-0">
           <h5 className="text-[#5D5B5B] text-sm md:text-base">Solutions for Consumers</h5>
           <h3 className="text-[21px] md:text-[32px] leading-[26.04px] md:leading-[39.68px] font-medium mt-4">Digital Identity / Digital Wallet all in your hands</h3>
@@ -138,7 +138,7 @@ const Home = () => {
           </li>
         </ul>
       </section>
-      <section className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 py-20 md:py-12 px-4">
+      <section className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-28 gap-y-10 py-20 md:py-12 px-4">
         <div className="space-y-3 max-w-sm">
           <span>
             <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
