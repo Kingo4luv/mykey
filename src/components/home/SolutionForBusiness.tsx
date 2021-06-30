@@ -19,7 +19,7 @@ const SolutionForBusiness = () => {
                   </svg>
                 </span>
                 <h3 className="text-base md:text-lg text-black font-medium">Validate everything</h3>
-                  <p className="text-grey text-[14px] leading-[23.52px]">Validate anything about anyone and leverage data to strengthen your relationship with your customers</p>
+                  <p className="text-grey text-[15px] leading-[23.52px]">Validate anything about anyone and leverage data to strengthen your relationship with your customers</p>
               </div>
               <div className="space-y-3">
                 <span>
@@ -28,7 +28,7 @@ const SolutionForBusiness = () => {
                   </svg>
                 </span>
                 <h3 className="text-base md:text-lg text-black font-medium">Share trust, not data</h3>
-                  <p className="text-grey text-[14px] leading-[23.52px]">Harness the power of self-sovereign identity to maintain, share, and control the source of truth</p>
+                  <p className="text-grey text-[15px] leading-[23.52px]">Harness the power of self-sovereign identity to maintain, share, and control the source of truth</p>
               </div>
               <div className="space-y-3">
                 <span>
@@ -37,7 +37,7 @@ const SolutionForBusiness = () => {
                   </svg>
                 </span>
                 <h3 className="text-base md:text-lg text-black font-medium">Privacy by design</h3>
-                  <p className="text-grey text-[14px] leading-[23.52px]">Manage data better with tamper-proof credentials and easy integration with your existing systems</p>
+                  <p className="text-grey text-[15px] leading-[23.52px]">Manage data better with tamper-proof credentials and easy integration with your existing systems</p>
               </div>
               <div className="space-y-3">
                 <span>
@@ -47,7 +47,7 @@ const SolutionForBusiness = () => {
 
                 </span>
                 <h3 className="text-base md:text-lg text-black font-medium">Easy deployment</h3>
-                  <p className="text-grey text-[14px] leading-[23.52px]">“Push-button deploy” on premises or the cloud</p>
+                  <p className="text-grey text-[15px] leading-[23.52px]">“Push-button deploy” on premises or the cloud</p>
               </div>
             </div>
           </div>
