@@ -1,6 +1,6 @@
 const Footer = () => {
     return(
-        <footer className="w-full bg-[#191919] py-6 text-white hidden md:block px-6 mt-12 lg:mt-0 z-0">
+        <footer className="w-full bg-[#191919] py-6 text-white px-6 z-0">
            <div className="mx-auto max-w-screen-2xl">
                <div className="flex items-center justify-between">
                    <p className="text-sm text-gray-200 font-light mt-4 sm:mt-0 capitalize">© Reef financial solutions Ltd</p>

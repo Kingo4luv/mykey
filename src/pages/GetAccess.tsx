@@ -11,7 +11,7 @@ const GetAccess = () => {
    }
     return(
         <main className="w-full">
-            <section className="max-w-6xl py-12 lg:py-32 mx-auto space-y-12 px-4">
+            <section className="max-w-6xl py-12 mx-auto space-y-12 px-4">
                 <Link to="/">
                     <div className="flex space-x-2 justify-center items-center mb-10">
                         <span>

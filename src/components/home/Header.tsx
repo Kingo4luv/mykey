@@ -29,7 +29,7 @@ const Header = () => {
                   A secure and easy way to verify your customer identity
                 </h1>
                 <p className="text-[#292929] md:leading-[26.88px] mt-5 font-normal text-[14px] md:text-[16px] leading-[23.52px]">Through smooth and secure identification data access and verification, you can validate anything about anyone</p>
-              <div className="flex space-x-4 mt-12">
+              <div className="flex space-x-3 mt-12">
                 <Link to="/get-access">
                     <button className="text-white bg-[#00ACE6] w-36 py-3 rounded text-[14px] md:text-[16] font-medium">Get access</button>
                 </Link>
