@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Listbox from "../../components/listbox/index";
 import TextInput from "../../components/input/TextInput";
 import emailjs from 'emailjs-com';
-import envVariables from "../../assets/config";
+
+const serviceId: string = (process.env.REACT_APP_EMAIL_SERVICE_ID as string);
+const templateId: string = (process.env.REACT_APP_EMAIL_TEMPLATE_ID as string);
+const userId: string = (process.env.REACT_APP_EMAIL_USER_ID as string);
 
 const products = 
 {
@@ -39,7 +42,7 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
          location:"",
          general: "",
      });
-    const {firstName, lastName, email, company, phone, location, description} = formData;
+    const {firstName, lastName, email, company, phone, location, product, description} = formData;
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         clearErrors();
         setformData({...formData, [e.target.name]: e.target.value})
@@ -58,7 +61,6 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
     }
 
     const onSubmit = (e: React.SyntheticEvent ) =>{
-        console.log(envVariables.EMAIL_SERVICE_ID);
         e.preventDefault();
         if (loading) return;
         if(firstName === ""){
@@ -79,8 +81,14 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
         if(location === "" ){
             return setErrors({...errors, phone: "Location is required"})
         }
+        if(product === undefined ){
+            return
+        }
+        if(description === "" ){
+            return
+        }
         setLoading(true);
-        emailjs.send(envVariables.EMAIL_SERVICE_ID, envVariables.EMAIL_TEMPLATE_ID, formData, envVariables.EMAIL_USER_ID)
+        emailjs.send(serviceId, templateId, formData, userId)
             .then((result) => {
                 if(result.text === "OK"){
                     resetForm();
@@ -92,10 +100,6 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
             });
     }
 
-
-    
-
-
     return(
         <div className="form">
             <header className="mx-auto max-w-lg space-y-3">
@@ -105,8 +109,9 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
                 </p>
             </header>
             <div className="w-full max-w-md mx-auto space-y-8 mt-6">
+                {errors.general !== "" && <div className="bg-red-100 rounded w-full py-3 text-sm text-red-500 my-4 px-4">{errors.general}</div>}
                 <form className="space-y-6 w-full" onSubmit={onSubmit}>
-                    <div className="rounded-md -space-y-px">
+                    <div className="rounded-md">
                         <div className="flex w-full">
                             <div className="w-1/2 relative">
                                 <TextInput first={true} error={errors.firstName} second={false} onchange={handleChange} last={false} id="first-name" value={firstName} label="First Name" name="firstName" type="text" required={true} placeholder="First Name" />
@@ -137,11 +142,11 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
                         </div>
                         <div>
                         <button
-                        onClick={switchView}
+                        onClick={onSubmit}
                         type="submit"
                         className="group relative w-full flex justify-center py-4 px-4 border border-transparent text-sm font-medium rounded text-white bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                        Submit
+                        {loading ? 'Please wait...' : 'Submit'}
                         </button>
                     </div>
                 </form>
