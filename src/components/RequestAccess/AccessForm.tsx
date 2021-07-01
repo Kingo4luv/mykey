@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Listbox from "../../components/listbox/index";
 import TextInput from "../../components/input/TextInput";
+import emailjs from 'emailjs-com';
+import envVariables from "../../assets/config";
 
 const products = 
 {
@@ -17,7 +19,7 @@ const products =
 }
 
 const AccessForm = ({switchView}:{switchView: () => void}) => {
-    
+    const [loading, setLoading] = useState(false)
     const [formData, setformData] = useState({
          firstName: "",
          lastName: "",
@@ -47,19 +49,52 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
         setErrors({...errors, firstName: "", lastName:"", company:"", email:"",phone:"", general:""});
     }
 
-    // const resetForm = () =>{
-    //     setformData({...formData, firstName: "", lastName:"", company:"", email:"", phone:""});
-    // }
+    const resetForm = () =>{
+        setformData({...formData, firstName: "", lastName:"", company:"", email:"", phone:""});
+    }
     const listChanged = (data:any) => {
         // console.log(data)
         setformData({...formData, [data.input] : data.selected})
     }
 
     const onSubmit = (e: React.SyntheticEvent ) =>{
+        console.log(envVariables.EMAIL_SERVICE_ID);
         e.preventDefault();
-        console.log()
-        console.log(formData);
+        if (loading) return;
+        if(firstName === ""){
+            return setErrors({...errors, firstName: "First name is required"})
+        }
+        if(lastName === ""){
+            return setErrors({...errors, lastName: "Last name is required"})
+        }
+        if(company === "" && company.length < 5){
+            return setErrors({...errors, company: "Company name is too short"})
+        }
+        if (email === "" || !email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+            return setErrors({...errors, email: "Email is required and must be valid"})
+        }
+        if(phone === "" && phone.length < 11){
+            return setErrors({...errors, phone: "Phone number is required with minimum of 11 characters"})
+        }
+        if(location === "" ){
+            return setErrors({...errors, phone: "Location is required"})
+        }
+        setLoading(true);
+        emailjs.send(envVariables.EMAIL_SERVICE_ID, envVariables.EMAIL_TEMPLATE_ID, formData, envVariables.EMAIL_USER_ID)
+            .then((result) => {
+                if(result.text === "OK"){
+                    resetForm();
+                    switchView()
+                }
+            }, (error) => {
+                setErrors({...errors, general:"Something went wrong. Please try again"});
+                setLoading(false)
+            });
     }
+
+
+    
+
 
     return(
         <div className="form">

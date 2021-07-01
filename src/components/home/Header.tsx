@@ -11,8 +11,9 @@ const Header = () => {
     return(
         <header className="w-full">
         <nav className="max-w-screen-2xl mx-auto h-20 flex items-center justify-between px-4 md:px-6">
-          <a href="/">
+          <a href="/" className="flex items-center space-x-2 ">
             <img src={logo} alt="logo"/>
+            <span className="font-medium text-black">MyKey</span>
           </a>
           <div className="md:flex space-x-6 items-center hidden">
             <Link to="/get-access">  
