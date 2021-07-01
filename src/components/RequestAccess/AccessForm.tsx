@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Listbox from "../../components/listbox/index";
 import TextInput from "../../components/input/TextInput";
 import emailjs from 'emailjs-com';
+import harperFetch from '../../utils/harperdb';
 
 const serviceId: string = (process.env.REACT_APP_EMAIL_SERVICE_ID as string);
 const templateId: string = (process.env.REACT_APP_EMAIL_TEMPLATE_ID as string);
@@ -60,7 +61,7 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
         setformData({...formData, [data.input] : data.selected})
     }
 
-    const onSubmit = (e: React.SyntheticEvent ) =>{
+    const onSubmit = async (e: React.SyntheticEvent ) =>{
         e.preventDefault();
         if (loading) return;
         if(firstName === ""){
@@ -88,6 +89,16 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
             return
         }
         setLoading(true);
+        const response = await harperFetch({
+            operation: 'insert',
+            schema: 'verifrica',
+            table: 'mykey',
+            records: [formData],
+        });
+        if(response.error){
+            setErrors({...errors, general:"Something went wrong. Please try again"});
+            return setLoading(false)
+        }
         emailjs.send(serviceId, templateId, formData, userId)
             .then((result) => {
                 if(result.text === "OK"){
