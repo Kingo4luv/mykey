@@ -16,6 +16,9 @@ const Header = () => {
             <span className="font-medium text-black">MyKey</span>
           </a>
           <div className="md:flex space-x-6 items-center hidden">
+            <Link to="/login">  
+                <button className="text-black text-[14px] md:text-[16] font-medium mr-6">Sign In</button>
+            </Link>
             <Link to="/get-access">  
                 <button className="text-white bg-[#00ACE6] w-36 py-3 rounded text-[14px] md:text-[16] font-medium">Get access</button>
             </Link>

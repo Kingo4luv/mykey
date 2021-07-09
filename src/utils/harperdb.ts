@@ -1,12 +1,12 @@
 const HARPERDB_URL: string = (process.env.REACT_APP_HARPERDB_URL as string);
 
 interface Record{
-    firstName: string;
-    lastName: string;
-    email: string,
-    company: string,
-    phone: string,
-    location: string,
+    firstName?: string;
+    lastName?: string;
+    email?: string,
+    company?: string,
+    phone?: string,
+    location?: string,
     product: string,
     description: string,
 
