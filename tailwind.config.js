@@ -7,6 +7,7 @@ module.exports = {
         colors: {
           grey: "#5D5B5B",
           "client-grey": "#FAFAFA",
+          "border-grey": "#EDEDED",
           "dark-blue": "#007499",
           "slightly-dark-blue": "#0086B3",
           "slightly-slight-dark-blue": "#0099CC",
@@ -84,7 +85,11 @@ module.exports = {
         },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+    }
+  },
   plugins: [],
   purge: {
     // Filenames to scan for classes
@@ -102,4 +107,5 @@ module.exports = {
       // safelist: [],
     },
   },
+  
 };

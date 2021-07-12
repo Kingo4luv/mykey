@@ -8,6 +8,7 @@ interface IFormValues {
   company?: string;
   phone?: string;
   location?: string;
+  website?: string;
   password?: string;
   retypePassword?: string;
 }
