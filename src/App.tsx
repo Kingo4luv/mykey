@@ -12,6 +12,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 import Verify from "./pages/auth/Verify";
 import AccountType from "./pages/account-selection";
 import Account from "./pages/account-selection/account";
+import Verification from "./pages/dashboard/verification";
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/account-type/:type">
             <Account />
+          </Route>
+          <Route path="/dashboard">
+            <Verification />
           </Route>
         </Switch>
     </Router>
