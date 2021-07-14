@@ -42,7 +42,7 @@ const links = [
 
 const Sidebar = () => {
     return(
-        <aside className="w-1/5 xl:w-1/6 h-screen bg-white text-black px-6 fixed top-24 left-0 py-12 space-y-12 hidden lg:block">
+        <aside className="w-1/5 xl:w-1/6 h-screen bg-white text-black px-6 fixed top-16 lg:top-20 left-0 py-12 space-y-12 hidden md:block">
             {links.map((link, i) => (
                 <LinkItem title={link.title} path={link.path} subLinks={link.subLinks} url={link.url} key={i}/>
             ))}

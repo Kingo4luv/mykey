@@ -17,7 +17,7 @@ const LinkItem = ({title, path, subLinks, url}: {title:string;  url: string; pat
                         />
                         </svg>
                     </span>
-                    <p className={`font-bold text-sm ${pathname !== url && 'text-icon-grey'}`}>{title}</p>
+                    <p className={`font-medium text-sm ${pathname !== url && 'text-icon-grey'}`}>{title}</p>
                 </div>
             </Link>
             {subLinks.length > 0 && 

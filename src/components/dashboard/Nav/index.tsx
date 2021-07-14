@@ -2,7 +2,7 @@ import Dropdown from "../headless/Dropdown"
 import logo from '../../../assets/svg/logo.svg'
 const Nav = () => {
     return(
-        <nav className="w-full h-16  lg:h-24 bg-hair fixed top-0 right-0 z-10 flex justify-between items-center px-4 lg:px-16">
+        <nav className="w-full h-16  lg:h-20 bg-hair fixed top-0 right-0 z-10 flex justify-between items-center px-4 lg:px-16">
                 <div className="flex items-center space-x-2 lg:space-x-12">
                     <img src={logo} alt="logo"/>
                     <div className="flex space-x-2 md:space-x-4 items-center">
