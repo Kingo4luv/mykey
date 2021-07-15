@@ -65,7 +65,7 @@ const people = [
   },
 ]
 
-export default function Table() {
+export default function Table({handleClick}: {handleClick:() => void}) {
   return (
     <div className="flex flex-col w-full mt-6">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -115,7 +115,7 @@ export default function Table() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {people.map((person, i) => (
-                  <tr key={i}>
+                  <tr key={i} onClick={handleClick} className="cursor-pointer">
                     <td className="px-6 py-4 text-sm text-hair whitespace-nowrap">
                       {person.myKeyId}
                     </td>

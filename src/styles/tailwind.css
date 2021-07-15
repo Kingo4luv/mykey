@@ -7,6 +7,14 @@
 /* Stop purging. */
 
 /* Your own custom component styles */
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
 
 /* Start purging... */
 @tailwind utilities;

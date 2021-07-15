@@ -1,6 +1,6 @@
 import { Transition } from "@headlessui/react"
 import { useState } from "react"
-import ModalLayout from "../../modal"
+import FilterModal from "../../modal/Filter"
 
 const VerificationHeadingComponent = () => {
     const [filterIsOpen, setFilterIsOpen] = useState(false)
@@ -46,7 +46,7 @@ const VerificationHeadingComponent = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
             >
-                <ModalLayout toggleFilter={toggleFilter} />
+                <FilterModal toggleFilter={toggleFilter} />
             </Transition>
         </>
     )
