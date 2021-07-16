@@ -13,6 +13,7 @@ import Verify from "./pages/auth/Verify";
 import AccountType from "./pages/account-selection";
 import Account from "./pages/account-selection/account";
 import Verification from "./pages/dashboard/verification";
+import Integration from "./pages/dashboard/integration";
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Verification />
+          </Route>
+          <Route path="/integration/:screen">
+            <Integration />
           </Route>
         </Switch>
     </Router>

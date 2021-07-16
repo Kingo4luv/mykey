@@ -7,9 +7,10 @@ interface Item {
 }
 
 interface ListButtonProps{
-  last: boolean;
+  last?: boolean;
   items: Item[];
   title: string;
+  single?: boolean;
   input: any;
   listChanged: (data:any) => void;
 }
@@ -19,7 +20,7 @@ interface Selected{
 }
 
 
-export default function ListButton({last, items, title, input, listChanged} : ListButtonProps) {
+export default function ListButton({last, items, title, input, single, listChanged} : ListButtonProps) {
   const [selected, setSelected] = useState<Selected | undefined>();
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export default function ListButton({last, items, title, input, listChanged} : Li
         {({ open }) => (
           <>
             <div className="relative">
-              <Listbox.Button className={`${last ? open ? 'rounded-none ':'rounded-b':'rounded-none'} appearance-none text-left relative block w-full px-3 py-[14px] sm:py-4 border-b border-l border-r border-t-0 border-[#D1D1D1] placeholder-form-text-grey text-form-text-grey focus:outline-none focus:ring-blue focus:border-blue focus:z-10 text-sm md:text-base`}>
+              <Listbox.Button className={`${last ? open && !single ? 'rounded-none border-t-0': single ? 'rounded border-t' :'rounded-b':'rounded-none'} appearance-none bg-white text-left relative block w-full px-3 py-[14px] sm:py-4 border-b border-l border-r  border-[#D1D1D1] placeholder-form-text-grey text-form-text-grey focus:outline-none focus:ring-blue focus:border-blue focus:z-10 text-sm md:text-base`}>
                 <span className={`block truncate text-sm ${selected === undefined ?"":"text-black"}`}>{selected === undefined ? title : selected.name}</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <ChevronDownIcon
