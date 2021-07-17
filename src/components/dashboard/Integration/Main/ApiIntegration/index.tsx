@@ -23,7 +23,7 @@ const ApiIntegration = () => {
 
             <div className="mt-10">
                 <h4 className="text-sm font-medium text-black">Choose your favorite client-side integration</h4>
-                <div className="mt-10 grid grid-cols-3 md:grid-cols-6 gap-x-2 md:gap-x-4">
+                <div className="mt-10 grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-x-4">
                     <SelectButton text="Node" value={selectedValue} handleSelected={handleSelected} />
                     <SelectButton text="Python" value={selectedValue} handleSelected={handleSelected} />
                     <SelectButton text="Java" value={selectedValue} handleSelected={handleSelected} />

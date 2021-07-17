@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -41,19 +40,11 @@ const InviteTeam = () => {
         resolver: yupResolver(schema)
     });
 
-    const [loading, setLoading] = useState(false)
-
-    const [errorsArr, setErrorsArr] = useState({
-        general: "",
-    });
-
     const onSubmit:SubmitHandler<IFormValues> = async (data) =>{}
 
     const changeScreenHandler = (title:string) => {
         history.push(`/integration/${title}`)
     }
-
-    
    
     return(
         <div className="py-6 max-w-sm">

@@ -14,6 +14,7 @@ import AccountType from "./pages/account-selection";
 import Account from "./pages/account-selection/account";
 import Verification from "./pages/dashboard/verification";
 import Integration from "./pages/dashboard/integration";
+import Activation from "./pages/dashboard/activation";
 
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path="/integration/:screen">
             <Integration />
+          </Route>
+          <Route path="/activation/:screen">
+            <Activation />
           </Route>
         </Switch>
     </Router>
