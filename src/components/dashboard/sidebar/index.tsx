@@ -22,9 +22,27 @@ const links = [
     },
     {
         title: 'Developers', 
-        url: '/developers',
+        url: '/developers/api-logs',
         path: `M21.333 8l-5.028 5.028-1.257-1.256L18.82 8l-3.772-3.772 1.257-1.256L21.333 8zM2.513 8l3.772 3.772-1.257 1.256L0 8l5.028-5.028 1.256 1.256L2.514 8zM8.7 16H6.81l5.824-16h1.891L8.7 16z`,
-        subLinks: ["Documentation", "API logs", "Webhooks", "Events"]
+        subLinks: [
+            {
+                title: 'Documentation', 
+                url: '/developers/api-logs'
+            },
+            {
+                title: 'API logs', 
+                url: '/developers/api-logs'
+            },
+            {
+                title: 'Webhooks', 
+                url: '/developers/webhooks'
+            },
+            {
+                title: 'Events', 
+                url: '/developers/events'
+            },
+            
+           ]
     },
     {
         title: 'Settings', 

@@ -1,7 +1,12 @@
 import { useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
-const LinkItem = ({title, path, subLinks, url}: {title:string;  url: string; path:string; subLinks: string[]}) => {
+interface SublinkProps{
+    title:string;
+    url: string
+}
+
+const LinkItem = ({title, path, subLinks, url}: {title:string;  url: string; path:string; subLinks: SublinkProps[]}) => {
     const {location:{pathname}} = useHistory();
     const [open, setOpen] = useState(false);
     return(
@@ -30,8 +35,8 @@ const LinkItem = ({title, path, subLinks, url}: {title:string;  url: string; pat
           </div>
             <div className="space-y-10 mt-10">
                 {subLinks.length > 0 && open && subLinks.map((link, i) => (
-                <Link to="/dashboard" className="flex pl-20 space-x-3" key={i}>
-                    <p className="text-sm text-icon-grey">{link}</p>
+                <Link to={link.url} className="flex pl-20 space-x-3" key={i}>
+                    <p className={`text-sm ${pathname !== link.url && 'text-icon-grey'}`}>{link.title}</p>
                 </Link>
             ))}
             </div>

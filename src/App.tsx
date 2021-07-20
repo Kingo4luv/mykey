@@ -15,6 +15,9 @@ import Account from "./pages/account-selection/account";
 import Verification from "./pages/dashboard/verification";
 import Integration from "./pages/dashboard/integration";
 import Activation from "./pages/dashboard/activation";
+import ApiLogs from "./pages/dashboard/developers/apilogs";
+import Webhooks from "./pages/dashboard/developers/webhooks";
+import Events from "./pages/dashboard/developers/events";
 
 
 function App() {
@@ -53,6 +56,15 @@ function App() {
           </Route>
           <Route path="/activation/:screen">
             <Activation />
+          </Route>
+          <Route path="/developers/api-logs">
+            <ApiLogs />
+          </Route>
+          <Route path="/developers/webhooks">
+            <Webhooks />
+          </Route>
+          <Route path="/developers/events">
+            <Events />
           </Route>
         </Switch>
     </Router>
