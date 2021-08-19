@@ -30,6 +30,7 @@ const Settings = () => {
 
   useEffect(()=>{
     _getData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const _getData=async()=>{
