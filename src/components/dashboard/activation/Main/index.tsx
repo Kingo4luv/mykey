@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom"
+import ActivationSidebar from "../sidebar";
 import ActivateAccount from "./ActivateAccount"
-import BillingInformation from "./BillingInformation";
 import CompanyInformation from "./CompanyInformation";
-import PaymentDetails from "./PaymentDetails";
+import Usecases from "./Usecase";
+import Billing from "./Billing";
 
 
 
@@ -13,12 +14,13 @@ const ActivateMain = () => {
 
     const screens: {[key: string]: any} = {
         "get-started": <ActivateAccount/>,
-        "company-information": <CompanyInformation />,
-        "billing-information" : <BillingInformation />,
-        "payment-details" : <PaymentDetails />,
+        "use-cases": <Usecases />,
+        "company-information" : <CompanyInformation />,
+        "billing" : <Billing />,
     }
     return(
-        <main className="w-full h-full relative overflow-y-auto ml-0 md:ml-[25%] xl:ml-[16.666667%] pt-20 md:pt-24 px-4 md:px-20">
+        <main className="w-full h-full flex flex-col md:flex-row overflow-y-auto ml-0 md:ml-[20%] xl:ml-[16.666667%]">
+           <ActivationSidebar />
            {screens[screen]}
         </main>
     )

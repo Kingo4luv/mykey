@@ -1,26 +1,15 @@
 import React from 'react'
 import { Path, UseFormRegister } from "react-hook-form";
-
-interface IFormValues {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  company?: string;
-  phone?: string;
-  location?: string;
-  website?: string;
-  password?: string;
-  retypePassword?: string;
-}
+import {IFormValues} from "../../utils/interfaces"
 
 type InputProps = {
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
-  first: boolean ;
+  first?: boolean ;
   half?: boolean;
   single?:boolean;
-  second : boolean 
-  last: boolean
+  second? : boolean 
+  last?: boolean
   type: string 
   error?: string  
   placeholder: string 
@@ -42,7 +31,7 @@ export default function TextInput({first, second, last, label, required,half, si
                 autoComplete="off"
                 required={required}
                 className = {
-                    `appearance-none relative bg-white block w-full px-3 py-[14px] sm:py-4 ${first && !half  && !single ? 'border-l border-t border-b rounded-tl rounded-tr': first && half && single ? 'border rounded' :first && half ? 'border-l border-t border-b rounded-tl' : second ? 'rounded-tr border-l-0': last ? 'rounded-b border-t-0':'rounded-none border-b border-t-0'} border-t border-r border-l border-b border-[#D1D1D1] placeholder-form-text-grey font-thin text-black focus:outline-none focus:ring-blue focus:border-blue focus:z-10 text-sm`
+                    `appearance-none relative bg-white block w-full px-3 py-[14px] sm:py-4 ${single ? 'border rounded' :first && !half  && !single ? 'border-l border-t border-b rounded-tl rounded-tr': first && half && single ? 'border rounded' :first && half ? 'border-l border-t border-b rounded-tl' : second ? 'rounded-tr border-l-0': last ? 'rounded-b border-t-0':'rounded-none border-b border-t-0'} border-t border-r border-l border-b border-[#D1D1D1] placeholder-form-text-grey font-thin text-black focus:outline-none focus:ring-blue focus:border-blue focus:z-10 text-sm`
                 }
                 placeholder={placeholder}
             />

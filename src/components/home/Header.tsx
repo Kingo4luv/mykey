@@ -1,31 +1,17 @@
 import {Link} from "react-router-dom";
-import logo from '../../assets/svg/logo.svg'
 import piggyVestLogo from '../../assets/svg/piggyvest.svg'
 import cowryWiseLogo from '../../assets/svg/cowrywise.svg'
 import flipPayLogo from '../../assets/svg/flippay.svg'
 import quidaxLogo from '../../assets/svg/quidax.svg'
 import abegLogo from '../../assets/svg/abeg.svg'
 import Hero from '../../assets/img/hero.jpeg'
+import Navigation from "../nav";
 
 const Header = () => {
     return(
         <header className="w-full">
-        <nav className="max-w-screen-2xl mx-auto h-20 flex items-center justify-between px-4 md:px-6">
-          <a href="/" className="flex items-center space-x-2 ">
-            <img src={logo} alt="logo"/>
-            <span className="font-medium text-black">MyKey</span>
-          </a>
-          <div className="md:flex space-x-6 items-center hidden">
-            <Link to="/login">  
-                <button className="text-black text-[14px] md:text-[16] font-medium mr-6">Sign In</button>
-            </Link>
-            <Link to="/get-access">  
-                <button className="text-white bg-[#00ACE6] w-36 py-3 rounded text-[14px] md:text-[16] font-medium">Get access</button>
-            </Link>
-            <button className="text-[#00ACE6] bg-white border border-[#00ACE6] w-36 py-3 rounded text-[14px] md:text-[16] font-medium">Download app</button>
-          </div>
-        </nav>
-        <div className="hero flex flex-col md:flex-row w-full h-auto md:h-[752px] mt-2">
+        <Navigation />
+        <div className="hero flex flex-col md:flex-row w-full h-auto md:h-[752px] mt-16 md:mt-2">
           <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-center px-4 md:px-6 py-6 md:py-0">
             <div className="w-full flex justify-center">
               <div className="max-w-sm">

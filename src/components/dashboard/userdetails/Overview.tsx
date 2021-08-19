@@ -10,9 +10,9 @@ const UserOverview = () => {
         <>
             <div className="w-full py-2 md:py-12">
                         <div className="w-full flex flex-col md:flex-row">
-                            <div className="w-full md:w-1/4 space-y-1">
-                                <h3 className="text-6xl text-center text-hair font-medium">98<span className="text-2xl align-top ml-1 font-thin">%</span></h3>
-                                <p className="text-sm text-center text-grey">Identity Score</p>
+                            <div className="w-full md:w-1/4 space-y-1 px-10">
+                                <h3 className="text-6xl text-hair font-medium">98<span className="text-2xl align-top ml-1 font-thin">%</span></h3>
+                                <p className="text-sm text-grey">Identity Score</p>
                             </div>
                             <div className="w-full md:w-3/4 h-full flex flex-col lg:flex-row mt-6 md:mt-0">
                                 <div className="w-full lg:w-1/2 space-y-6 md:space-y-[56px] mt-6 md:mt-0">
@@ -119,7 +119,7 @@ const UserOverview = () => {
                     </div>
                     <div className="max-w-5xl mx-auto mt-10 px-2 md:px-12 space-y-6 pb-6">
                         <h3 className="text-base text-grey font-medium">Selfie Video</h3>
-                        <div className="flex flex-col md:flex-row justify-between space-y-12 md:space-y-0">
+                        <div className="flex flex-col lg:flex-row justify-between space-y-12 lg:space-y-0">
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-4">
                                     <button>

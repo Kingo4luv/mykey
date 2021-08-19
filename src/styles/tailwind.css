@@ -16,6 +16,14 @@
     display: none;
 }
 
+.dropdown-content {
+    display: none;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */

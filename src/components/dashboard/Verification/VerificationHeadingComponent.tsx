@@ -9,7 +9,7 @@ const VerificationHeadingComponent = () => {
     }
     return(
         <>
-            <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-between mt-12">
+            <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-between my-12">
                 <div className="mb-0 md:mb-6 lg:mb-0">
                     <h3 className="text-base md:text-2xl text-hair">MyKey (Digital Identity Verification)</h3>
                     <p className="text-[14px] leading-[23.52px] mt-1 text-grey md:text-hair">A list of customers using MyKey app for Identity Verification</p>
@@ -32,10 +32,6 @@ const VerificationHeadingComponent = () => {
                         <span className="text-sm">Filter</span>
                     </button>
                 </div>
-            </div>
-            <div className="mt-8 flex space-x-6 font-medium">
-                <h4>Unreviewed(0)</h4>
-                <h4>Reviewed(0)</h4>
             </div>
             <Transition
             show={filterIsOpen}

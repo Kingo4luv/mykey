@@ -5,7 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 const AuthLayout: React.FC = ({children}) => {
     let location = useLocation();
     return(
-        <div className="w-full flex h-screen max-h-screen min-h-screen">
+        <div className="w-full flex h-screen max-h-screen min-h-screen overflow-x-hidden">
             <div className="w-full md:w-1/2 h-full relative py-4 md:py-12 px-4">
                 <div className="max-w-2xl mx-auto">
                     <nav className="flex items-center justify-between">

@@ -4,7 +4,7 @@ import playStore from '../assets/svg/playstore.svg'
 
 const StepScreen = ({title}:{title:string}) =>{
     return(
-        <section className="py-0 md:py-32 max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center px-4">
+        <section className="py-0 md:py-32 max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row items-center px-4 mt-10 md:mt-2">
             <div className="w-full lg:w-1/3 mt-20 md:mt-0">
                 <h5 className="text-[#5D5B5B] text-base md:text-2xl">{title}</h5>
                 <h3 className="text-[21px] md:text-[32px] leading-[26.04px] md:leading-[39.68px] font-medium mt-4">Digital Identity / Digital Wallet all in your hands</h3>

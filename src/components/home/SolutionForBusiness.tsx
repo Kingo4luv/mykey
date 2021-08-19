@@ -11,7 +11,7 @@ const SolutionForBusiness = () => {
           <div className="w-full lg:max-w-2xl">
              <h5 className="text-[#5D5B5B] text-base md:text-2xl">Solutions for Businesses</h5>
              <h2 className="text-[21px] md:text-[32px] leading-[26.04px] md:leading-[39.68px] font-medium mt-4 max-w-lg">Confirm the identity of your customers keep fraudsters away.</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-12 gap-x-6 lg:gap-x-20 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-6 lg:gap-x-20 mt-12">
               <div className="space-y-3">
                 <span>
                   <svg width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">

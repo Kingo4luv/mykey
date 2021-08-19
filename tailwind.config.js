@@ -35,7 +35,7 @@ module.exports = {
         },
         boxShadow: {
           "button-shadow": "0px 0px 8px #CAF1FF",
-          "box-shadow": "0px 8px 20px rgba(215, 215, 215, 0.25)",
+          "box-shadow": "0px 0px 20px rgba(137, 137, 137, 0.25)",
           "drop-down-shadow": "0px 0px 20px rgba(201, 201, 201, 0.25)",
           "card-shadow": "0px 0px 20px rgba(215, 215, 215, 0.25)",
           "menu-drop-down-shadow": "0px 8px 20px rgba(215, 215, 215, 0.25)",
