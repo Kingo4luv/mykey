@@ -16,7 +16,6 @@ import BusinessAndIndividual from "../components/home/BusinessAndIndividual"
 import Footer from "../components/Footer"
 import Doctor from "../assets/img/doctor.jpg"
 import { Link } from "react-router-dom"
-import WhatIsMyKey from "../components/individual/WhatIsMyKey"
 
 const data = [
     {
