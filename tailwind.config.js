@@ -7,6 +7,8 @@ module.exports = {
         colors: {
           grey: "#5D5B5B",
           "client-grey": "#FAFAFA",
+          "icon-grey": "#999999",
+          "border-grey": "#EDEDED",
           "dark-blue": "#007499",
           "slightly-dark-blue": "#0086B3",
           "slightly-slight-dark-blue": "#0099CC",
@@ -33,10 +35,11 @@ module.exports = {
         },
         boxShadow: {
           "button-shadow": "0px 0px 8px #CAF1FF",
-          "box-shadow": "0px 8px 20px rgba(215, 215, 215, 0.25)",
+          "box-shadow": "0px 0px 20px rgba(137, 137, 137, 0.25)",
           "drop-down-shadow": "0px 0px 20px rgba(201, 201, 201, 0.25)",
           "card-shadow": "0px 0px 20px rgba(215, 215, 215, 0.25)",
-          "menu-drop-down-shadow": "0px 8px 20px rgba(215, 215, 215, 0.25)"
+          "menu-drop-down-shadow": "0px 8px 20px rgba(215, 215, 215, 0.25)",
+          "menu-shadow": "0px 0px 20px rgba(137, 137, 137, 0.25)",
 
         },
         skew: {
@@ -84,7 +87,11 @@ module.exports = {
         },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+    }
+  },
   plugins: [],
   purge: {
     // Filenames to scan for classes
@@ -102,4 +109,5 @@ module.exports = {
       // safelist: [],
     },
   },
+  
 };

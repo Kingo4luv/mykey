@@ -3,6 +3,28 @@ import Listbox from "../../components/listbox/index";
 import TextInput from "../../components/input/TextInput";
 import emailjs from 'emailjs-com';
 import harperFetch from '../../utils/harperdb';
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+interface IFormValues {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  company?: string;
+  phone?: string;
+  location?: string;
+  password?: string
+}
+
+const schema = yup.object().shape({
+  email: yup.string().required(),
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+  location: yup.string().required(),
+  company: yup.string().required(),
+  phone: yup.string().required(),
+});
 
 const serviceId: string = (process.env.REACT_APP_EMAIL_SERVICE_ID as string);
 const templateId: string = (process.env.REACT_APP_EMAIL_TEMPLATE_ID as string);
@@ -23,65 +45,27 @@ const products =
 }
 
 const AccessForm = ({switchView}:{switchView: () => void}) => {
+    const { register, handleSubmit, formState:{ errors } } = useForm<IFormValues>({
+        resolver: yupResolver(schema)
+    });
+
     const [loading, setLoading] = useState(false)
     const [formData, setformData] = useState({
-         firstName: "",
-         lastName: "",
-         email: "",
-         company: "",
-         phone: "",
-         location:"",
          product: "",
          description:"",
      });
-     const [errors, setErrors] = useState({
-         firstName: "",
-         lastName: "",
-         email: "",
-         company: "",
-         phone:"",
-         location:"",
+     const [errorsArr, setErrorsArr] = useState({
          general: "",
      });
-    const {firstName, lastName, email, company, phone, location, product, description} = formData;
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        clearErrors();
-        setformData({...formData, [e.target.name]: e.target.value})
-        
-    }
-    const clearErrors = () =>{
-        setErrors({...errors, firstName: "", lastName:"", company:"", email:"",phone:"", general:""});
-    }
+    const { product, description} = formData;
 
-    const resetForm = () =>{
-        setformData({...formData, firstName: "", lastName:"", company:"", email:"", phone:""});
-    }
     const listChanged = (data:any) => {
         // console.log(data)
         setformData({...formData, [data.input] : data.selected})
     }
 
-    const onSubmit = async (e: React.SyntheticEvent ) =>{
-        e.preventDefault();
+    const onSubmit:SubmitHandler<IFormValues> = async (data) =>{
         if (loading) return;
-        if(firstName === ""){
-            return setErrors({...errors, firstName: "First name is required"})
-        }
-        if(lastName === ""){
-            return setErrors({...errors, lastName: "Last name is required"})
-        }
-        if(company === "" && company.length < 5){
-            return setErrors({...errors, company: "Company name is too short"})
-        }
-        if (email === "" || !email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-            return setErrors({...errors, email: "Email is required and must be valid"})
-        }
-        if(phone === "" && phone.length < 11){
-            return setErrors({...errors, phone: "Phone number is required with minimum of 11 characters"})
-        }
-        if(location === "" ){
-            return setErrors({...errors, phone: "Location is required"})
-        }
         if(product === undefined ){
             return
         }
@@ -89,24 +73,24 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
             return
         }
         setLoading(true);
+        const newFormData = {...formData, ...data}
         const response = await harperFetch({
             operation: 'insert',
             schema: 'verifrica',
             table: 'mykey',
-            records: [formData],
+            records: [newFormData],
         });
         if(response.error){
-            setErrors({...errors, general:"Something went wrong. Please try again"});
+            setErrorsArr({...errors, general:"Something went wrong. Please try again"});
             return setLoading(false)
         }
-        emailjs.send(serviceId, templateId, formData, userId)
+        emailjs.send(serviceId, templateId, newFormData, userId)
             .then((result) => {
                 if(result.text === "OK"){
-                    resetForm();
                     switchView()
                 }
             }, (error) => {
-                setErrors({...errors, general:"Something went wrong. Please try again"});
+                setErrorsArr({...errors, general:"Something went wrong. Please try again"});
                 setLoading(false)
             });
     }
@@ -120,28 +104,28 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
                 </p>
             </header>
             <div className="w-full max-w-md mx-auto space-y-8 mt-6">
-                {errors.general !== "" && <div className="bg-red-100 rounded w-full py-3 text-sm text-red-500 my-4 px-4">{errors.general}</div>}
-                <form className="space-y-6 w-full" onSubmit={onSubmit}>
+                {errorsArr.general !== "" && <div className="bg-red-100 rounded w-full py-3 text-sm text-red-500 my-4 px-4">{errorsArr.general}</div>}
+                <form className="space-y-6 w-full" onSubmit={handleSubmit(onSubmit)}>
                     <div className="rounded-md">
                         <div className="flex w-full">
                             <div className="w-1/2 relative">
-                                <TextInput first={true} error={errors.firstName} second={false} onchange={handleChange} last={false} id="first-name" value={firstName} label="First Name" name="firstName" type="text" required={true} placeholder="First Name" />
+                                <TextInput first={true} half={true} error={errors?.firstName?.message} register={register} second={false} last={false} id="first-name"  label="firstName" name="firstName" type="text" required={true} placeholder="First Name" />
                             </div>
                             <div className="w-1/2 relative">
-                                <TextInput first={false} error={errors.lastName} second={true} last={false} onchange={handleChange} id="last-name" value={lastName} label="Last Name" name="lastName" type="text" required={true} placeholder="Last Name" />
+                                <TextInput first={false} error={errors.lastName?.message} register={register} second={true} last={false}  id="last-name"  label="lastName" name="lastName" type="text" required={true} placeholder="Last Name" />
                             </div>
                         </div>
                             <div className="relative">
-                                <TextInput first={false} second={false} error={errors.email} last={false} onchange={handleChange} value={email} id="email" label="email" name="email" type="email" required={true} placeholder="Email Address" />
+                                <TextInput first={false} second={false} error={errors.email?.message} register={register} last={false}  id="email" label="email" name="email" type="email" required={true} placeholder="Email Address" />
                             </div>
                             <div className="relative">
-                                <TextInput first={false} second={false}  error={errors.company} last={false} onchange={handleChange} value={company} id="company" label="company" name="company" type="text" required={true} placeholder="Company" />
+                                <TextInput first={false} second={false}  error={errors.company?.message} register={register} last={false}  id="company" label="company" name="company" type="text" required={true} placeholder="Company" />
                             </div>
                             <div className="relative">
-                                <TextInput first={false} second={false}  error={errors.phone} last={false} onchange={handleChange} value={phone} id="phone" label="phone" name="phone" type="text" required={true} placeholder="Phone Number" />
+                                <TextInput first={false} second={false}  error={errors.phone?.message} register={register} last={false}   id="phone" label="phone" name="phone" type="text" required={true} placeholder="Phone Number" />
                             </div>
                             <div className="relative">
-                                <TextInput first={false} second={false}  error={errors.location} last={false} onchange={handleChange} value={location} id="location" label="location" name="location" type="text" required={true} placeholder="Location" />
+                                <TextInput first={false} second={false}  error={errors.location?.message} register={register} last={false}   id="location" label="location" name="location" type="text" required={true} placeholder="Location" />
                             </div>
                             <Listbox last={false} items={products.items} title={products.title} input={"product"} listChanged={listChanged}/>
                             <div>
@@ -153,7 +137,6 @@ const AccessForm = ({switchView}:{switchView: () => void}) => {
                         </div>
                         <div>
                         <button
-                        onClick={onSubmit}
                         type="submit"
                         className="group relative w-full flex justify-center py-4 px-4 border border-transparent text-sm font-medium rounded text-white bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
