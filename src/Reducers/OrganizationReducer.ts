@@ -2,7 +2,9 @@ import { asyncActionName } from "../utils/AsyncUtils";
 import {
   CREATE_ORGANIZATION,
   FETCH_TEAM_MEMBERS,
-  CREATE_TEAM_MEMBER
+  CREATE_TEAM_MEMBER,
+  FETCH_ORGANIZATION,
+  UPDATE_ORGANIZATION
 } from "../actions";
 import { initialState } from "../utils/store/initialState";
 import { Action } from "../utils/interfaces";
@@ -66,6 +68,40 @@ const OrganisationReducer = (state = initialState.Organization, action: Action) 
         ...state,
         loadingAddTeamMember: action.payload,
       };
+
+      case asyncActionName(FETCH_ORGANIZATION).success:
+        return {
+          ...state,
+          organization: action.payload,
+        };
+  
+      case asyncActionName(FETCH_ORGANIZATION).failure:
+        return {
+          ...state,
+          loadingOrganizationError: action.payload,
+        };
+      case asyncActionName(FETCH_ORGANIZATION).loading:
+        return {
+          ...state,
+          loadingOrganization: action.payload,
+        };
+
+        case asyncActionName(UPDATE_ORGANIZATION).success:
+          return {
+            ...state,
+            organization: action.payload,
+          };
+    
+        case asyncActionName(UPDATE_ORGANIZATION).failure:
+          return {
+            ...state,
+            updateOrganizationError: action.payload,
+          };
+        case asyncActionName(UPDATE_ORGANIZATION).loading:
+          return {
+            ...state,
+            loadingUpdateOrganizations: action.payload,
+          };
     default:
       return state;
   }

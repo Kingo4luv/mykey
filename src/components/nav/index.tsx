@@ -26,8 +26,8 @@ const links = [
   {
     name:"Individual",
     sublinks:[
-      {name:"What is MyKey?", url:"/individual/what-is-myidentikey", img:Facial},
-      {name:"Download MyKey App", url:"/individual/what-is-myidentikey", img: HalfPhone},
+      {name:"What is MyIdentikey?", url:"/individual/what-is-myidentikey", img:Facial},
+      {name:"Download MyIdentikey App", url:"/individual/what-is-myidentikey", img: HalfPhone},
       {name:"Registration Demo", url:"#", img:RegistrationDemo}
     ]
   },

@@ -11,8 +11,8 @@ const VerificationHeadingComponent = () => {
         <>
             <div className="flex flex-col-reverse md:flex-col lg:flex-row justify-start md:justify-between my-12">
                 <div className="mb-0 md:mb-6 lg:mb-0">
-                    <h3 className="text-base md:text-2xl text-hair">MyKey (Digital Identity Verification)</h3>
-                    <p className="text-[14px] leading-[23.52px] mt-1 text-grey md:text-hair">A list of customers using MyKey app for Identity Verification</p>
+                    <h3 className="text-base md:text-2xl text-hair">MyIdentikey (Digital Identity Verification)</h3>
+                    <p className="text-[14px] leading-[23.52px] mt-1 text-grey md:text-hair">A list of customers using MyIdentikey app for Identity Verification</p>
                 </div>
                 <div className="flex space-x-5 items-center justify-between mb-6 md:mb-0">
                     <div className="relative">

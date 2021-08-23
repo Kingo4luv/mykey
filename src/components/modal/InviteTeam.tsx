@@ -177,39 +177,7 @@ const InviteTeamMember = ({ toggleModal }: { toggleModal: () => void }) => {
                   </svg>
                 </span>
               </div>
-              <div className="flex justify-between items-center border-t py-3 md:py-6 px-4 md:px-12">
-                <div className="flex space-x-4 items-center">
-                  <input
-                    type="radio"
-                    className="w-5 h-5"
-                    id="view"
-                    name="role"
-                    onChange={_onRoleChange}
-                    value="view only"
-                    checked={role === "view only"}
-                  />
-                  <div className="text-sm space-y-[2px]">
-                    <h3 className="font-medium text-hair">View Only</h3>
-                    <p className="text-grey font-thin">
-                      Best for business owners and company administrators
-                    </p>
-                  </div>
-                </div>
-                <span className="hidden sm:block">
-                  <svg
-                    width="14"
-                    height="9"
-                    viewBox="0 0 14 9"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.54564 6.00046L11.6369 0.909178L13.0913 2.36354L6.54564 8.90918L2.54288e-07 2.36354L1.45436 0.909179L6.54564 6.00046Z"
-                      fill="#101010"
-                    />
-                  </svg>
-                </span>
-              </div>
+             
             </div>
             <div className="px-4 md:px-8 w-full flex justify-between">
               <div className="w-full sm:w-36 hidden sm:block">

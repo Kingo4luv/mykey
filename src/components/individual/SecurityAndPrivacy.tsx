@@ -9,7 +9,7 @@ const SecurityAndPrivacy = () => {
                         <p>
                         MyIdentiKey never gets access to your ID information.
                         </p>
-                        <p>To complete registration, your information is encrypted and sent to MyKey's secure registration server for verification. Once verified, it is sent back to your phone and destroyed on the server.</p>
+                        <p>To complete registration, your information is encrypted and sent to MyIdentikey's secure registration server for verification. Once verified, it is sent back to your phone and destroyed on the server.</p>
                         <p>Your information is only stored offline on your smartphone using strong encryption and your smartphone's security mechanisms. Only you have access and control over your information.</p>
                     </div>
                 </div>

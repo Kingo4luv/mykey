@@ -7,14 +7,14 @@ const testimonies = [
         id: 1,
         author: 'Wole Majekodunmi',
         role: 'Head of Marketing',
-        body: 'Identification verification affects nearly every business, making identity a necessary component of every transaction.  Thanks to Mykey identity verification has been made easy. User Identity verification is safely and efficiently handled. Customers can be onboarded with as little as a selfie-and ID scan . Mykey is a digital identity you can trust',
+        body: 'Identification verification affects nearly every business, making identity a necessary component of every transaction.  Thanks to MyIdentikey identity verification has been made easy. User Identity verification is safely and efficiently handled. Customers can be onboarded with as little as a selfie-and ID scan . MyIdentikey is a digital identity you can trust',
         location: 'Verifrica HQ'
     },
     {
         id: 2,
         author: 'Shalom Fashola',
         role: 'Lead Developer',
-        body: 'Thanks to Mykey identity verification has been made easy. User Identity verification is safely and efficiently handled. Customers can be onboarded with as little as a selfie-and ID scan . Mykey is a digital identity you can trust. Identification verification affects nearly every business, making identity a necessary component of every transaction.  ',
+        body: 'Thanks to MyIdentikey identity verification has been made easy. User Identity verification is safely and efficiently handled. Customers can be onboarded with as little as a selfie-and ID scan . MyIdentikey is a digital identity you can trust. Identification verification affects nearly every business, making identity a necessary component of every transaction.  ',
         location: 'Verifrica'
     },
     {
@@ -64,7 +64,7 @@ const Testimony = () => {
     return(
         <section className="w-full bg-[#FAFAFA] py-12 md:py-24 flex flex-col justify-center items-center space-y-5 px-4">
             <div className=" text-center space-y-4">
-              <h4 className="text-center text-lg text-black">Why use MyKey?</h4>
+              <h4 className="text-center text-lg text-black">Why use MyIdentikey?</h4>
               <h2 className="text-center text-xl md:text-3xl text-black font-medium">What our clients say about us</h2>
             </div>
             <div className="h-60 relative max-w-xl w-full md:w-1/2">

@@ -2,8 +2,11 @@ import React, { ReactNode, useReducer } from "react";
 import combineReducers from "react-combine-reducers";
 import AuthReducer from "../../Reducers/AuthReducer";
 import OrganizationReducer from "../../Reducers/OrganizationReducer";
+import PopulateReducer from "../../Reducers/PopulateReducer";
+import ToastReducer from "../../Reducers/ToastReducer";
 import { Context } from "./Context";
 import { initialState } from "./initialState";
+
 
 interface Props{
   children:ReactNode
@@ -11,7 +14,10 @@ interface Props{
 export const Provider:React.FC<Props> = ({ children }) => {
   const [rootReducerCombined, initialStateCombined] = combineReducers({
     Auth: [AuthReducer, initialState.Auth],
-    Organization:[OrganizationReducer, initialState.Organization]
+    Organization:[OrganizationReducer, initialState.Organization],
+    Populate:[PopulateReducer, initialState.Populate],
+    Toasts:[ToastReducer, initialState.Toasts],
+
   });
 
   const [state, dispatch] = useReducer(

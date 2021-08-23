@@ -6,7 +6,7 @@ const FundWalletModal = ({toggleFilter}: {toggleFilter: () => void}) => {
         <ModalLayout>
             <div className="max-w-lg bg-white rounded shadow px-4 md:px-8 py-6 relative">
                 <div className="header flex items-center justify-between">
-                    <h3 className="text-sm text-black mt-5">Proceed to your Banking app to fund your MyKey wallet</h3>
+                    <h3 className="text-sm text-black mt-5">Proceed to your Banking app to fund your MyIdentikey wallet</h3>
                     <button onClick={toggleFilter} className="absolute top-5 right-5">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 6.2225L14.2225 0L16 1.7775L9.7775 8L16 14.2225L14.2225 16L8 9.7775L1.7775 16L0 14.2225L6.2225 8L0 1.7775L1.7775 0L8 6.2225Z" fill="#101010"/>
@@ -25,7 +25,7 @@ const FundWalletModal = ({toggleFilter}: {toggleFilter: () => void}) => {
                         </dl>
                         <dl className="w-full flex justify-between py-6 text-sm text-black">
                             <dt>Beneficiary Name</dt>
-                            <dd>MMyKey(Username)</dd>
+                            <dd>MMyIdentikey(Username)</dd>
                         </dl>
                     </div>
 

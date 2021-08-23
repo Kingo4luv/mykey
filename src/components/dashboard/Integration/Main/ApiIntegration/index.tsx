@@ -18,7 +18,7 @@ const ApiIntegration = () => {
         <div className="py-6 max-w-2xl">
             <h3 className="text-xl">Get started with our server side SDK</h3>
             <p className="mt-8 text-grey text-[14px] leading-[23.56px] max-w-md">
-                Server side SDKs help you to get started faster with the MyKey API. Please find the advanced API documentation on the bottom.
+                Server side SDKs help you to get started faster with the MyIdentikey API. Please find the advanced API documentation on the bottom.
             </p>
 
             <div className="mt-10">
@@ -32,7 +32,7 @@ const ApiIntegration = () => {
                 </div>
             </div>
             <div className="mt-12">
-                <h4 className="text-sm font-medium text-black">1 Add @MyKey/node npm package to your package.json. </h4>
+                <h4 className="text-sm font-medium text-black">1 Add @MyIdentikey/node npm package to your package.json. </h4>
                 <div className="py-40">
 
                 </div>

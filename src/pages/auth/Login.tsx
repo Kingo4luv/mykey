@@ -52,7 +52,7 @@ const Login = () => {
     <AuthLayout>
       <div className="h-full w-full max-w-md mx-auto space-y-6 mt-20 md:mt-52">
         <h2 className="text-2xl font-bold text-black">Welcome back</h2>
-        <p className="text-sm text-grey">Use form below to sign in to MyKey</p>
+        <p className="text-sm text-grey">Use form below to sign in to MyIdentikey</p>
         {state?.Auth.logInError && state?.Auth.logInError.status && (
           <AuthError error={state.Auth.logInError.error} />
         )}

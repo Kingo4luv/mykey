@@ -15,7 +15,7 @@ import ListSection from '../../components/business/ListSection';
 
 const items = [
     {
-        text: "Replace passwords with password-free login and multi-factor authentication (MFA) on the MyKey mobile app.",
+        text: "Replace passwords with password-free login and multi-factor authentication (MFA) on the MyIdentikey mobile app.",
         svg: PhoneVerified
     },
     {
@@ -53,7 +53,7 @@ const PasswordFreeLogin = () => {
     return(
         <div className="w-full">
             <Header image={Dashboard} title="Login and Multi-Factor Authentication" text="Increase login security, reduce friction, and eliminate filling of long enrollment forms"/>
-            <Features items={items} title="Why use MyKey for DIgital Identity and Wallet?" />
+            <Features items={items} title="Why use MyIdentikey for DIgital Identity and Wallet?" />
             <ListSection items={accessData} image={IdentityScanning} title="Stronger Security and easier access"/>
             <Testimony />
             <BlogPost />

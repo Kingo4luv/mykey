@@ -16,7 +16,7 @@ const GetAccess = () => {
                 <Link to="/" className="w-full flex justify-center items-center">
                     <div className="flex items-center space-x-2 ">
                         <img src={logo} alt="logo"/>
-                        <span className="font-medium text-black">MyKey</span>
+                        <span className="font-medium text-black">MyIdentikey</span>
                     </div>
                 </Link>
                 {showForm ? (

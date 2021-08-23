@@ -9,9 +9,9 @@ const ActivateAccount = () => {
     }
     return(
         <div className="py-6 md:py-24 max-w-lg px-4 md:px-16">
-            <h3 className="text-xl mt-6">Activate your Mykey Business Account</h3>
+            <h3 className="text-xl mt-6">Activate your MyIdentikey Business Account</h3>
             <p className="mt-8 text-grey text-[14px] leading-[23.56px] max-w-sm font-thin">
-                You need to activate your business to use MyKey  in live mode. Start by entering your company Information
+                You need to activate your business to use MyIdentikey  in live mode. Start by entering your company Information
             </p>
 
             <div className="flex space-x-8 mt-8">

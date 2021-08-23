@@ -11,7 +11,7 @@ const AuthLayout: React.FC = ({children}) => {
                     <nav className="flex items-center justify-between">
                         <a href="/" className="flex items-center space-x-2 ">
                             <img src={logo} alt="logo"/>
-                            <span className="font-medium text-black">MyKey</span>
+                            <span className="font-medium text-black">MyIdentikey</span>
                         </a>
                         
                         {["/login","/register","/verify"].includes(location.pathname) ? (

@@ -26,3 +26,22 @@ export const dispatchError = (
   }
   dispatch(fn(actionType).loading(false));
 };
+
+export const statelessErrorHandler=(onError:(err:string|string[])=>void, e:any)=>{
+  if(onError){
+    const status= e.response.status;
+    if(status >= 500){
+      return onError("Internal server error")
+    }
+    const { message, errors } = e.response.data;
+    if (errors && Object.keys(errors).length > 0) {
+      const errs: string[] = [];
+      const keys = Object.keys(errors);
+      keys.forEach((key) => {
+        errs.push(errors[key][0]);
+      });
+      return onError(errs);
+    }
+    return onError(message);
+  }
+}

@@ -47,7 +47,7 @@ const IdentityVerification = () => {
     return(
         <div className="w-full">
             <Header image={Woman} title="Identity Verification Solution" text="Verify identity in seconds remotely or in person, prevent fraud, get KYC compliance, and more."/>
-            <Features items={items} title="Why use MyKey for Identity Verification?" />
+            <Features items={items} title="Why use MyIdentikey for Identity Verification?" />
             <SolutionForConsumer />
             <SolutionForBusiness />
             <Testimony />

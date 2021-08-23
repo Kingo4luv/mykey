@@ -7,17 +7,22 @@ const AUTH={
   register:`${BASE_URL}/register`,
   verifyAccount:`${BASE_URL}/user/verify`,
   forgetPassword:`${BASE_URL}/forgot`,
-  resetPassword:`${BASE_URL}/post-forgot`
+  resetPassword:`${BASE_URL}/post-forgot`,
+  changePassword:`${BASE_URL}/user/change-password`
 }
 
 const ORGANIZATION_URLS={
   default:`${BASE_URL}/organization`,
 }
 
+const POPULATE_URL={
+  default:`${BASE_URL}/populate`,
+}
 
 export {
   AUTH,
   TOKEN_KEY,
   ORGANIZATION_URLS,
+  POPULATE_URL,
   DEFAULT_ORG_ID
 }

@@ -7,7 +7,7 @@ const BillingsComponent: React.FC = ({children}) => {
             </p>
 
             <div className="mt-6 md:mt-10 bg-white p-6 rounded space-y-6 shadow-drop-down-shadow">
-                <h3 className="text-sm text-black ">Proceed to your Banking app to fund your MyKey wallet</h3>
+                <h3 className="text-sm text-black ">Proceed to your Banking app to fund your MyIdentikey wallet</h3>
                 <div className="">
                     <dl className="w-full flex justify-between border-b py-6 text-sm text-black">
                         <dt>Account Number</dt>
@@ -19,7 +19,7 @@ const BillingsComponent: React.FC = ({children}) => {
                     </dl>
                     <dl className="w-full flex justify-between py-6 text-sm text-black">
                         <dt>Beneficiary Name</dt>
-                        <dd>MMyKey(Username)</dd>
+                        <dd>MMyIdentikey(Username)</dd>
                     </dl>
                 </div>
             </div>

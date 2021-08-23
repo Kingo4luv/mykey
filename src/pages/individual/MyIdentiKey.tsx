@@ -13,7 +13,7 @@ import playStore from '../../assets/svg/playstore.svg'
 
 const data = [
     {
-        title:'Create a MyKey account in minutes',
+        title:'Create a MyIdentikey account in minutes',
         text: 'Urna pulvinar euismod arcu at imperdiet commo, dui. Vel nulla vitae malesuada adipiscing est sapien vitae. Ut tellus mattis posuere accumsan. Pulvinar felis risus nibh imperdiet at.',
         svg: Signup
     },

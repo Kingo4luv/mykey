@@ -6,7 +6,7 @@ import { IFormValues } from "../utils/interfaces";
 import * as AUTHAPI from "./Apis/authAPI";
 import { api } from "../utils/axios";
 import { getTokenInfo } from "../utils/helper";
-import { dispatchError } from "./dispatchError";
+import { dispatchError, statelessErrorHandler } from "./dispatchError";
 
 export const persistToken = (
   token: string,
@@ -136,6 +136,25 @@ export const resetPassword = async (
   } catch (e) {
     if (e && e.response) {
       dispatchError(dispatch, asyncActions, e, e.status, RESET_PASSWORD)
+    }
+  }
+};
+
+export const changePassword = async (
+  payload: Record<string, any>,
+  onDone?: () => void,
+  onError?:(err:string|string[])=>void
+) => {
+  try {
+    const { status } = await AUTHAPI.changePassword(payload);
+    if (status === 200) {
+      onDone && onDone();
+    }
+  } catch (e) {
+    if (e && e.response) {
+      if(onError){
+        statelessErrorHandler(onError, e)
+      }
     }
   }
 };

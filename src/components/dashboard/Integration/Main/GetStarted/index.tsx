@@ -21,7 +21,7 @@ const GetStarted = () => {
         
             <div className="mt-12 bg-white px-6 py-8 shadow-drop-down-shadow rounded space-y-10">
                 <div className="flex justify-between items-center">
-                    <h4 className="text-lg font-medium text-hair">MyKey</h4>
+                    <h4 className="text-lg font-medium text-hair">MyIdentikey</h4>
                     <a href="/integration" className="text-sm text-blue">Read documentation</a>
                 </div>
                 <div className="w-full space-y-6">

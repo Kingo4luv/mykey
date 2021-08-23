@@ -29,8 +29,8 @@ const Settings = () => {
   };
 
   useEffect(()=>{
-    _getData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    _getData();
+    // eslint-disable-next-line
   },[])
 
   const _getData=async()=>{
@@ -44,7 +44,7 @@ const Settings = () => {
   return (
     <DashboardLayout>
       <main className="w-full h-full relative overflow-y-auto ml-0 md:ml-[20%] lg:ml-[16.666667%] pt-20 md:pt-28 px-4 md:px-16 space-y-12 pb-12">
-        <h2 className="text-2xl text-hair">MyKey Settings</h2>
+        <h2 className="text-2xl text-hair">MyIdentikey Settings</h2>
         <ul className="flex space-x-4 md:space-x-10 border-b overflow-x-auto scrolling-wrapper">
           <li
             onClick={() => changeScreenHandler("general")}

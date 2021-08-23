@@ -52,7 +52,7 @@ const BusinessAccount = () => {
           <nav className="flex items-center justify-between">
             <a href="/" className="flex items-center space-x-2 ">
               <img src={logo} alt="logo" />
-              <span className="font-medium text-black">MyKey</span>
+              <span className="font-medium text-black">MyIdentikey</span>
             </a>
           </nav>
           <div className="w-full max-w-md mx-auto space-y-8 mt-12 md:mt-16 xl:mt-32">
@@ -60,7 +60,7 @@ const BusinessAccount = () => {
               Create a business account
             </h2>
             <p className="text-[16px] leading-[26.88px] text-grey max-w-sm ">
-              With MyKey, you can validate anything about anyone
+              With MyIdentikey, you can validate anything about anyone
             </p>
             {state?.Organization &&
               state.Organization.createOrganizationError &&

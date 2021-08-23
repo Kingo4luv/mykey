@@ -34,13 +34,13 @@ const AccountType = () => {
                 <nav className="max-w-screen-xl mx-auto">
                     <a href="/" className="flex items-center space-x-2 ">
                         <img src={logo} alt="logo"/>
-                        <span className="font-medium text-black">MyKey</span>
+                        <span className="font-medium text-black">MyIdentikey</span>
                     </a>
                 </nav>
                 <main className="max-w-screen-xl mx-auto mt-16">
-                    <h3 className="text-black font-bold text-2xl">Welcome to MyKey!</h3>
-                    <p className="mt-6 text-grey text-base">At MyKey, we are building a secure and easy way to verify your customer identity</p>
-                    <p className="mt-8 text-black text-base">Please select a path below to continue  with MyKey:</p>
+                    <h3 className="text-black font-bold text-2xl">Welcome to MyIdentikey!</h3>
+                    <p className="mt-6 text-grey text-base">At MyIdentikey, we are building a secure and easy way to verify your customer identity</p>
+                    <p className="mt-8 text-black text-base">Please select a path below to continue  with MyIdentikey:</p>
                     <ul className="mt-10 flex gap-6 sm:gap-9 flex-col md:flex-row">
                         {accountTypes.map((type, i) => (
                             <AccountTypeList key={i} title={type.title} icon={type.icon} description={type.description} handleSelectedType={handleSelectedType} selectedType={selectedType} />

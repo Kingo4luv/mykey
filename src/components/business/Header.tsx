@@ -19,7 +19,7 @@ const Header = ({image, title, text}:{image: string, title: string, text:string}
                                     </Link>
                                     <button className="text-[#00ACE6] bg-white border border-[#00ACE6] w-full md:w-40 py-3 rounded text-[14px] md:text-[16] font-medium">Contact sales</button>
                                 </div>
-                                <p className="mt-6 text-sm text-black">Not a business? <span className="font-medium">Visit MyKey for Individuals.</span></p>
+                                <p className="mt-6 text-sm text-black">Not a business? <span className="font-medium">Visit MyIdentikey for Individuals.</span></p>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,8 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/outline";
 
 interface Item {
-  name: string
+  name: string;
+  id?:string|number;
 }
 
 interface ListButtonProps{
@@ -13,25 +14,27 @@ interface ListButtonProps{
   single?: boolean;
   input: any;
   listChanged: (data:any) => void;
+  disabled?:boolean;
 }
 
 interface Selected{
   name: string;
+  id?:string|number;
 }
 
 
-export default function ListButton({last, items, title, input, single, listChanged} : ListButtonProps) {
+export default function ListButton({last, items, title, input, single, listChanged, disabled} : ListButtonProps) {
   const [selected, setSelected] = useState<Selected | undefined>();
 
   useEffect(() => {
-    let data = {input, selected: selected?.name }
+    let data = {input, selected: selected }
     listChanged(data);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected])
 
   return (
     <div className="w-full">
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={selected} onChange={setSelected} disabled={disabled}>
         {({ open }) => (
           <>
             <div className="relative">

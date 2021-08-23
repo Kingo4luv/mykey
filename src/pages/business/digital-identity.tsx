@@ -47,11 +47,11 @@ const items = [
 const usabilityData = [
     {
         boldText: "Users take a selfie and scan ID documents ",
-        normalText: "once to get a reusable MyKey ID with verified information."
+        normalText: "once to get a reusable MyIdentikey ID with verified information."
     },
     {
         boldText: "Reusable digital ID provides instant identity verification ",
-        normalText: "for multiple businesses by using verified information from the MyKey app."
+        normalText: "for multiple businesses by using verified information from the MyIdentikey app."
     },
     {
         boldText: "Works online (remotely) and offline (in person) with a ",
@@ -67,8 +67,8 @@ const usabilityData = [
 const DigitalIdentity = () => {
     return(
         <div className="w-full">
-            <Header image={Digital} title="Digital Identity and Wallet" text="Improve access to your services with MyKey's verified digital identity platform."/>
-            <Features items={items} title="Why use MyKey for DIgital Identity and Wallet?" />
+            <Header image={Digital} title="Digital Identity and Wallet" text="Improve access to your services with MyIdentikey's verified digital identity platform."/>
+            <Features items={items} title="Why use MyIdentikey for DIgital Identity and Wallet?" />
             <ListSection items={usabilityData} image={Usability} title="Better Usability and Convenience"/>
             <Testimony />
             <BlogPost />

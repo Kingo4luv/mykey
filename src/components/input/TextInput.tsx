@@ -16,9 +16,10 @@ type InputProps = {
   name: string 
   id: string 
   required: boolean;
+  disabled?:boolean;
 };
 
-export default function TextInput({first, second, last, label, required,half, single, register, type, error, placeholder, name, id,}: InputProps ){
+export default function TextInput({first, second, last, label, required,half, single, register, type, error, placeholder, name, id,disabled}: InputProps ){
     return(
         <>
             <label htmlFor="first-name" className="sr-only">
@@ -34,6 +35,7 @@ export default function TextInput({first, second, last, label, required,half, si
                     `appearance-none relative bg-white block w-full px-3 py-[14px] sm:py-4 ${single ? 'border rounded' :first && !half  && !single ? 'border-l border-t border-b rounded-tl rounded-tr': first && half && single ? 'border rounded' :first && half ? 'border-l border-t border-b rounded-tl' : second ? 'rounded-tr border-l-0': last ? 'rounded-b border-t-0':'rounded-none border-b border-t-0'} border-t border-r border-l border-b border-[#D1D1D1] placeholder-form-text-grey font-thin text-black focus:outline-none focus:ring-blue focus:border-blue focus:z-10 text-sm`
                 }
                 placeholder={placeholder}
+                disabled={disabled}
             />
             {error !== undefined && error !== "" && <div className="flex items-center space-x-3 absolute top-[60px] md:top-[63px] w-full bg-white border border-[#A7AFB2] py-3 z-10 shadow-box-shadow rounded text-[10px] sm:text-xs">
                 <span className="absolute -top-2 left-6 w-4 h-4 border-t border-l border-[#A7AFB2] bg-white transform rotate-45 z-[-99]"></span>

@@ -62,3 +62,14 @@ export const resetPassword= async(payload:Record<string, any>)=>{
   }
 }
 
+export const changePassword= async(payload:Record<string, any>)=>{
+  try {
+    return await api({
+      method:"post",
+      data:payload,
+      url:AUTH.changePassword
+    });
+  } catch (e) {
+    throw e;
+  }
+}

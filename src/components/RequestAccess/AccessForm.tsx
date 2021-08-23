@@ -34,12 +34,12 @@ const products =
 {
     title: "How can we help?",
     items: [
-        { name: "I am interested in MyKey’s Solution" },
-        { name: "I am a consultant interested in MyKey for my client" },
+        { name: "I am interested in MyIdentikey's Solution" },
+        { name: "I am a consultant interested in MyIdentikey for my client" },
         { name: "I am a technology provider & want to partner with My..." },
         { name: "I am a customer and I need support " },
         { name: "I am trying to verify I need support" },
-        { name: "I want to work at MyKey" },
+        { name: "I want to work at MyIdentikey" },
         { name: "Others" },
     ]       
 }

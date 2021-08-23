@@ -42,7 +42,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link to="/individual/what-is-myidentikey" className="text-gray-300 text-sm font-thin">
-                                    Download MyKey
+                                    Download MyIdentity
                                 </Link>
                             </li>
                             <li>

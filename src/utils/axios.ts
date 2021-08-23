@@ -6,6 +6,8 @@ const api = Axios.create({
   timeout: 80000,
   headers: {
     "Content-Type": "application/json",
+    // "Accept": "application/json",
+    // "Content-Type": "multipart/form-data",
   },
 });
 

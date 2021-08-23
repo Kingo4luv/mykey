@@ -6,7 +6,7 @@ const IndividualAccount  = () => {
             <nav className="max-w-screen-xl mx-auto">
                 <a href="/" className="flex items-center space-x-2 ">
                     <img src={logo} alt="logo"/>
-                    <span className="font-medium text-black">MyKey</span>
+                    <span className="font-medium text-black">MyIdentikey</span>
                 </a>
             </nav>
             <StepScreen title="Download app to get started" />
